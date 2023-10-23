@@ -128,6 +128,15 @@ body.stop-scroll {
 	top: 50%;
 	transform: rotate(-45deg);
 }
+.form__validation {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.just-validate-error-label {
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
 
 
 
