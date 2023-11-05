@@ -1,5 +1,5 @@
 @media (max-width: 992px) {
-	.nav {
+	.header-dark__nav {
 		--header-height: 82px;
 		padding-top: 70px;
 		position: fixed;
@@ -18,25 +18,25 @@
 		transform: none;
 	}
 
-	.nav__list {
+	.header-dark_list {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.nav__item {
+	.header-dark__item {
 		margin-bottom: 60px;
 	}
 
-	.nav__item:not(:last-child) {
+	.header-dark__item:not(:last-child) {
 		margin-right: 0;
 	}
 
-	.nav__link {
+	.header-dark__link {
 		font-size: 25px;
 		color: $black ;
 	}
-	.nav__link:focus {
+	.header-dark__link:focus {
 		color: $black;
 	}
 	.burger {
