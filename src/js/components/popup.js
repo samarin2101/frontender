@@ -94,4 +94,7 @@ export default class Popup {
 	}
 }
 
+const popup = new Popup();
+
+
 
