@@ -1,7 +1,7 @@
 {
 	"svguse": {
 		"scope": "html",
-		"prefix": "g-use",
+		"prefix": "d-use",
 		"body": [
 			"<svg class=\"icons\">",
 			"  <use xlink:href=\"img/sprite.svg#$2\"></use>",
@@ -11,7 +11,7 @@
 	},
 	"burger": {
 		"scope": "html",
-		"prefix": "g-burger",
+		"prefix": "d-burger",
 		"body": [
 			"<button class=\"burger\" aria-label=\"Открыть меню\" aria-expanded=\"false\"  data-burger>",
 			"  <span class=\"burger__line\"></span>",
@@ -39,7 +39,7 @@
 },
 
 	"basicform": {
-		"prefix": "g-form",
+		"prefix": "d-form",
 		"body": [
 			"<form action=\"#\" class=\"form\">",
 			"  <label class=\"form__label\">",
@@ -51,7 +51,7 @@
 		"description": "Snippet for basic form"
 	},
 	"basicswiper": {
-		"prefix": "g-swiper",
+		"prefix": "swiper",
 		"body": [
 			"<div class=\"swiper $1\">",
 			"  <div class=\"swiper-wrapper\">",
@@ -63,26 +63,9 @@
 		"description": "Snippet for basic swiper structure"
 	},
 
-	"tabs html sctructure": {
-		"prefix": "g-tabs",
-		"body": [
-			"<div class=\"tabs\" data-tabs=\"$1\">",
-			"  <ul class=\"tabs__nav\">",
-			"    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$2</button></li>",
-			"    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$3</button></li>",
-			"    <li class=\"tabs__nav-item\"><button class=\"tabs__nav-btn\" type=\"button\">$4</button></li>",
-			"  </ul>",
-			"  <div class=\"tabs__content\">",
-			"    <div class=\"tabs__panel\">$5</div>",
-			"    <div class=\"tabs__panel\">$6</div>",
-			"    <div class=\"tabs__panel\">$7</div>",
-			"  </div>",
-			"</div>"
-		],
-		"description": "Snippet for basic tabs structure"
-	},
+
 	"checkbox": {
-		"prefix": "g-checkbox",
+		"prefix": "d-checkbox",
 		"body": [
 			"<div class=\"checkbox\">",
 			"<input type=\"checkbox\" name=\"check1\">",
@@ -91,25 +74,9 @@
 		],
 		"description": "checkbox"
 	},
-	"popup": {
-		"prefix": "popup",
-		"body": [
-			"<div id=\"popup\" class=\"popup\">",
-			"<div class=\"popup__body\">",
-			"<div class=\"popup__content\">",
-			"<button type=\"button\" class=\"popup__close close-popup\">&times;</button>",
-			"<h3 class=\"popup__title\">Заказать звонок</h3>",
-			"<div class=\"popup__text\"></div>",
-			"</div>",
-			"</div>",
-			"</div>",
-			"",
-			""
-		],
-		"description": "popup"
-	},
+
   "accordion": {
-    "prefix": "html",
+    "prefix": "d-accordion",
     "body": [
       "<div class=\"accordion\">",
       "<div class=\"accordion__item active\">",
@@ -139,6 +106,53 @@
       "",
       "</div>"
     ],
-    "description": "accordion"
+    "description": "html"
+  },
+  "popup": {
+    "prefix": "d-popup",
+    "body": [
+      "<div id=\"popup\" class=\"popup\">",
+      "<div class=\"popup__body\">",
+      "<div class=\"popup__content\">",
+      "<button type=\"button\" class=\"popup__close close-popup\"></button>",
+      "<div class=\"popup-header\">",
+      "<h3 class=\"popup__title\">Заказать звонок</h3>",
+      "</div>",
+      "<div class=\"popup__text\">",
+      "<div class=\"popup__form\">",
+      "<form action=\"#\" class=\"form\">",
+      "<label class=\"form__label\">",
+      "<input type=\"text\" name=\"name\" class=\"form__input\" placeholder=\"Имя\" required>",
+      "</label>",
+      "<label class=\"form__label\">",
+      "<input type=\"text\" name=\"phone\" class=\"form__input phone\" placeholder=\"Телефон\" required>",
+      "</label>",
+      "<textarea class=\"form__textarea\" name=\"message\" placeholder=\"Ваше сообщение\" required></textarea>",
+      "<button class=\"btn btn-blue btn-width form__btn\">Отправить</button>",
+      "</form>",
+      "</div>",
+      "<div class=\"popup-footer\">",
+      "<p>Я согласен (а) на обработку моих персональных данных с политикой конфиденциальности</p>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      "</div>",
+      ""
+    ],
+    "description": "html"
+  },
+  "d-tabs": {
+		"prefix": "d-tabs",
+		"description": "html",
+		"body": [ "<div class=\"tabs__wrapper\">", "<div class=\"tabs\">", "<a href=\"#tab-1\" class=\"tab tabs--active\"></a>",	"<a href=\"#tab-2\" class=\"tab\"></a>","</div>","<div class=\"tabs-container\">","<div class=\"tabs-content tabs-content--active\" id=\"tab-1\">","</div>","</div>","</div>"
+		],
+	},
+  "d-picture": {
+    "prefix": "d-picture",
+    "body": [
+      "<picture><source srcset=\"\" type=\"image/webp\"><img src=\"\" alt=\"\"></picture>"
+    ],
+    "description": "html"
   }
 }

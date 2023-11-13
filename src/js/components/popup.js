@@ -1,100 +1,93 @@
-export default class Popup {
-	constructor() {
-		this.popupLinks = document.querySelectorAll('.popup-link')
-		this.body = document.body
-		this.lockPagging = document.querySelectorAll('.fix-blocks')
-		this.unlock = true
-		this.timeout = 500
+export function popup() {
+  const popupLinks = document.querySelectorAll(".popup-link");
+  const body = document.body;
+  const lockPagging = document.querySelectorAll(".fix-blocks");
+  let unlock = true;
+  const timeout = 500;
 
-		this.init()
-	}
+  function init() {
+    popupLinks.forEach((popupLink) => {
+      popupLink.addEventListener("click", (e) => {
+        const popupName = popupLink.getAttribute("href").replace("#", "");
+        const curentPopup = document.getElementById(popupName);
+        open(curentPopup);
+        e.preventDefault();
+      });
+    });
 
-	init() {
-		this.popupLinks.forEach(popupLink => {
-			popupLink.addEventListener('click', e => {
-				const popupName = popupLink.getAttribute('href').replace('#', '')
-				const curentPopup = document.getElementById(popupName)
-				this.open(curentPopup)
-				e.preventDefault()
-			})
-		})
+    const popupCloseIcon = document.querySelectorAll(".close-popup");
+    popupCloseIcon.forEach((el) => {
+      el.addEventListener("click", (e) => {
+        close(el.closest(".popup"));
+        e.preventDefault();
+      });
+    });
 
-		const popupCloseIcon = document.querySelectorAll('.close-popup')
-		popupCloseIcon.forEach(el => {
-			el.addEventListener('click', e => {
-				this.close(el.closest('.popup'))
-				e.preventDefault()
-			})
-		})
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const popupActive = document.querySelector(".popup.open");
+        close(popupActive);
+      }
+    });
+  }
 
-		document.addEventListener('keydown', e => {
-			if (e.key === 'Escape') {
-				const popupActive = document.querySelector('.popup.open')
-				this.close(popupActive)
-			}
-		})
-	}
+  function open(curentPopup) {
+    if (curentPopup && unlock) {
+      const popupActive = document.querySelector(".popup.open");
+      if (popupActive) {
+        close(popupActive, false);
+      } else {
+        bodyLock();
+      }
+      curentPopup.classList.add("open");
+      curentPopup.addEventListener("click", (e) => {
+        if (!e.target.closest(".popup__content")) {
+          close(e.target.closest(".popup"));
+        }
+      });
+    }
+  }
 
-	open(curentPopup) {
-		if (curentPopup && this.unlock) {
-			const popupActive = document.querySelector('.popup.open')
-			if (popupActive) {
-				this.close(popupActive, false)
-			} else {
-				this.bodyLock()
-			}
-			curentPopup.classList.add('open')
-			curentPopup.addEventListener('click', e => {
-				if (!e.target.closest('.popup__content')) {
-					this.close(e.target.closest('.popup'))
-				}
-			})
-		}
-	}
+  function close(popupActive, doUnlock = true) {
+    if (unlock) {
+      popupActive.classList.remove("open");
+      if (doUnlock) {
+        bodyUnLock();
+      }
+    }
+  }
 
-	close(popupActive, doUnlock = true) {
-		if (this.unlock) {
-			popupActive.classList.remove('open')
-			if (doUnlock) {
-				this.bodyUnLock()
-			}
-		}
-	}
+  function bodyLock() {
+    const lockPaddingValue =
+      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+    lockPagging.forEach((el) => {
+      el.style.paddingRight = lockPaddingValue;
+    });
 
-	bodyLock() {
-		const lockPaddingValue =
-			window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
-		this.lockPagging.forEach(el => {
-			el.style.paddingRight = lockPaddingValue
-		})
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add("stop-scroll");
 
-		this.body.style.paddingRight = lockPaddingValue
-		this.body.classList.add('stop-scroll')
+    unlock = false;
+    setTimeout(() => {
+      unlock = true;
+    }, timeout);
+  }
 
-		this.unlock = false
-		setTimeout(() => {
-			this.unlock = true
-		}, this.timeout)
-	}
+  function bodyUnLock() {
+    setTimeout(() => {
+      lockPagging.forEach((el) => {
+        el.style.paddingRight = "0px";
+      });
+      body.style.paddingRight = "0px";
+      body.classList.remove("stop-scroll");
+    }, 0);
 
-	bodyUnLock() {
-		setTimeout(() => {
-			this.lockPagging.forEach(el => {
-				el.style.paddingRight = '0px'
-			})
-			this.body.style.paddingRight = '0px'
-			this.body.classList.remove('stop-scroll')
-		}, 0)
+    unlock = false;
 
-		this.unlock = false
+    setTimeout(() => {
+      unlock = true;
+    }, timeout);
+  }
 
-		setTimeout(() => {
-			this.unlock = true
-		}, this.timeout)
-	}
+  init();
 }
-
-const popup = new Popup();
-
-
-

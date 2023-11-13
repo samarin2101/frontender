@@ -1,5 +1,5 @@
 export function burger() {
-	const burger = document?.querySelector(".burger");
+const burger = document?.querySelector(".burger");
 const nav = document?.querySelector(".nav");
 const navItems = nav?.querySelectorAll("a");
 const body = document.body;
