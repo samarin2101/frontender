@@ -154,5 +154,14 @@
       "<picture><source srcset=\"\" type=\"image/webp\"><img src=\"\" alt=\"\"></picture>"
     ],
     "description": "html"
+  },
+  "html": {
+    "prefix": "d-data",
+    "body": [
+      "<div class=\"data\">",
+      "<span class=\"dateTimeSpan\"></span>",
+      "</div>"
+    ],
+    "description": "html"
   }
 }

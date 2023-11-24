@@ -1,5 +1,12 @@
 .data {
-	p {
-		font-size: 14px;
-	}
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  span {
+    font-size: 15px;
+    color: $red;
+  }
+  &-center {
+    justify-content: center;
+  }
 }

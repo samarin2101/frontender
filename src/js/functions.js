@@ -1,8 +1,7 @@
 /* Табы */
 
-import * as Tabs from './components/tabs.js'
-Tabs.tabs()
-
+// import * as Tabs from './components/tabs.js'
+// Tabs.tabs()
 
 /* Модальное окно */
 
@@ -22,12 +21,3 @@ Tabs.tabs()
 
 // import * as Youtubes from './components/youtubes.js'
 // Youtubes.youtubes()
-
-
-
-
-
-
-
-
-

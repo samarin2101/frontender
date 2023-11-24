@@ -1,4 +1,3 @@
-import "./components/tabs.js";
-import "./components/accordion.js";
-import "./components/popup.js";
+import * as Data from './components/data.js'
 
+Data.data()
