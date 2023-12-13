@@ -28,7 +28,8 @@ function watcher () {
 	gulp.watch(app.path.watch.scss, scss);
 	gulp.watch(app.path.watch.js, js);
 	gulp.watch(app.path.watch.images, images);
-	gulp.watch(app.path.watch.svgicons, svgSprive)
+	gulp.watch(app.path.watch.svgicons, svgSprive);
+	gulp.watch(app.path.watch.fonts, fonts);
 
 }
 
