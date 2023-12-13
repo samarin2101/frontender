@@ -1,13 +1,16 @@
-@import 'vars';
-@import 'base';
-@import 'fonts';
-@import 'libs';
-@import 'components/btn';
-@import 'components/forms';
-@import 'components/popup';
-@import 'components/menu-default';
-@import 'components/menu-dark';
-@import 'components/tabs';
-@import 'components/accordion';
-@import 'components/icons';
-@import 'media';
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+
+// тестовые стили, удалите их
+.page__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--vh);
+}
